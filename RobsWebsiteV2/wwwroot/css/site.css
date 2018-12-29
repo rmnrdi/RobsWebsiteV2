@@ -26,10 +26,88 @@
     margin: 15px;
 }
 
+.navbar img {
+    width: 50px;
+    height: 100%;
+    border-radius: 50%;
+    float: left;
+}
+
+.navbar li{
+    font-size: larger;
+}
+
+/*.navbar img {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    display: block;
+    background: url(../images/Me/RobertHeadshot-min.png) no-repeat;
+    width: 300px;
+    height: 200px;
+}*/
+
+/*||||||||||||||||| Skills Container ||||||||||||||||||||||*/
+.skillsContainer .row {
+    margin: 20px;
+}
+
+.skillsContainer col {
+    margin: 20px;
+    align-content:center;
+}
+
+.skillsContainer i {
+    font-size: 10em;
+}
+
+.skillsContainer img {
+  height: 10em;
+  width: 10em;
+}
+
+.skillsContainer figcaption {
+    /*border: 1px dotted blue;*/
+    text-align: left;
+}
+
+/*||||||||||||||||||||||||| Lectures Container ||||||||||||||||||||*/
+#lecturesContainer .thumbnail {
+    /*width: 100%;*/
+    border: 0px !important;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #404040;
+    text-decoration: none;
+}
+
+#lecturesContainer .thumbnail img {
+        border: 1px solid black;
+        margin: 10px 10px 10px 0px;
+        width: 100%;
+        height: auto;
+        box-shadow: 5px 5px 2px #888888;
+
+}
+
+#lecturesContainer .thumbsubtext {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #404040;
+    text-decoration: none;
+}
+
+
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
+    }
+    .skillsContainer col {
+        padding:20px;
+        font-size:10em;
     }
 }

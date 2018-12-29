@@ -1,0 +1,690 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpticianMathLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:OpticianMathLibrary.BaseCurve">
+            <summary>
+            Base Curve Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.BaseCurve.VogelsRulePlus(System.Double,System.Double)">
+            <summary>
+            Calculates the spherical equivalent of a plus lens.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.BaseCurve.VogelsRuleMinus(System.Double,System.Double)">
+            <summary>
+            Calculates the spherical equivalent of a minus lens.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.BaseCurve.BoddyFormulaPlus(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates front base curve of a plus lens based on the Boddy Formula. Inputs are sphere, cylinder and add power in diopters.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <param name="addPower">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.BaseCurve.BoddyFormulaMinus(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates front base curve of a minus lens based on the Boddy Formula. Inputs are sphere, cylinder and add power in diopters.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <param name="addPower">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.BaseCurve.BoddyFormula(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates front base curve based on the Boddy Formula. Inputs are sphere, cylinder and add power in diopters.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <param name="addPower">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.NumberRounder">
+            <summary>
+            Rounds numbers to nearest value
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.NumberRounder.RoundToQuarter(System.Double)">
+            <summary>
+            Rounds double to nearest .25
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.NumberRounder.RoundToEighth(System.Double)">
+            <summary>
+            Rounds double to nearest .125
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.OpticianFormulas">
+            <summary>
+            Optician Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.OpticianFormulas.AstigmatismEvaluator(System.Double,System.Double)">
+            <summary>
+            Evaluates the type of astigmatism based on lens power. Inputs are sphere and cylinder.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.OpticianFormulas.BinocularDecentration(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the total binocular decentration of lenses in a frame. Inputs are the A measurement, B measurement and binocular pupil distance in millimeters.
+            </summary>
+            <param name="aMeasure">In millimeters.</param>
+            <param name="dblMeasure">In millimeters.</param>
+            <param name="binocularPD">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.OpticianFormulas.MonocularDecentration(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the monocular decentration of a lens in a frame. Inputs are the A measurement, DBL measurement and monocular pd in millimeters.
+            </summary>
+            <param name="aMeasure">In millimeters.</param>
+            <param name="dblMeasure">In millimeters.</param>
+            <param name="monoPDOD">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.OpticianFormulas.SegDrop(System.Double,System.Double)">
+            <summary>
+            Calculates the bifocal segment drop. Inputs are the segment height and B measurement in millimeters. 
+            </summary>
+            <param name="segmentHeight">In millimeters.</param>
+            <param name="bMeasure">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.OpticianFormulas.MinimumBlankSize(System.Double,System.Double,System.Boolean)">
+            <summary>
+            Calculates the minimum blank size with optional 2mm compensation for chip factor. Inputs are effective diameter, monocular decentration in millimeters and true/false if you want to include/exclude chip factor compensation.
+            </summary>
+            <param name="effectiveDiamater">In millimeters.</param>
+            <param name="monoDecentration">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.PhysicsFormulas">
+            <summary>
+            Physics Formulas
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.WaveFormulaVelocity(System.Double,System.Double)">
+            <summary>
+            Calculates the velocity of a wave. Inputs are frequency and wavelength.
+            </summary>
+            <param name="frequency"></param>
+            <param name="wavelength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.WaveFormulaFrequency(System.Double,System.Double)">
+            <summary>
+            Calculates the frequency of a wave. Inputs are velocity and wavelength.
+            </summary>
+            <param name="velocity"></param>
+            <param name="wavelength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.WaveFormulaWavelength(System.Double,System.Double)">
+            <summary>
+            Calculates the wavelength of light. Inputs are velocity and frequency.
+            </summary>
+            <param name="velocity"></param>
+            <param name="frequency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.Illumination(System.Double)">
+            <summary>
+            Calculates illumination at a given distance in meters. 
+            </summary>
+            <param name="distance">In meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.IndexOfRefraction(System.Double)">
+            <summary>
+            Calculates Index of refraction of a material. Input is speed of light in material in m/s.
+            </summary>
+            <param name="cInMaterial">Speed of light in material. In meters per second</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.PhysicsFormulas.SpeedOfLightInMaterial(System.Double)">
+            <summary>
+            Calculates the speed of light in a material of a given index. Input is the refractive index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Power">
+            <summary>
+            Power Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.Vergence(System.Double)">
+            <summary>
+            Calculates the vergence of light at a given distance. Input is distance in Centimeters.
+            </summary>
+            <param name="distance">In meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.Diopter(System.Double)">
+            <summary>
+            Calculates the dioptric power of a lens. Input is focal length in meters.
+            </summary>
+            <param name="distance">In meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.FocalDistance(System.Double)">
+            <summary>
+            Calculates the focal length of a lens. Input is dioptric power.
+            </summary>
+            <param name="diopter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.SurfacePower(System.Double,System.Double)">
+            <summary>
+            Calculates the surface power of lens. Input is the refractive index and radius of curvature in millimeters.
+            </summary>
+            <param name="index"></param>
+            <param name="radius">In millimeters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.RadiusOfCurvature(System.Double,System.Double)">
+            <summary>
+            Calculates the radius of curvature of a lens. Input is refractive index and dioptric power.
+            </summary>
+            <param name="index"></param>
+            <param name="diopter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.NominalPower(System.Double,System.Double)">
+            <summary>
+            Calculates the nominal power of a lens in diopters. Input is the dioptric power of the front and back of a lens.
+            </summary>
+            <param name="powerFront">In diopters.</param>
+            <param name="powerBack">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.NominalBacksidePower(System.Double,System.Double)">
+            <summary>
+            Calculates the nominal back surface power of a lens. Inputs are the front surface power and the total lens power.
+            </summary>
+            <param name="powerFront">In diopters.</param>
+            <param name="totalPower">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.LensMakersEquation(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the nominal power  of lens in diopters. Input is the index of refraction and 
+            radius of curvature for front/back surfaces in meters.
+            <para>
+            NOTE: You must enter the radius of curvature as plus or minus depending on the surface.
+            </para>
+            </summary>
+            <param name="index"></param>
+            <param name="radiusFrontCM">Plus or Minus. In meters.</param>
+            <param name="radiusBackCM">Plus or Minus. In meters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.SpericalEquivalant(System.Double,System.Double)">
+            <summary>
+            Calculates the spherical equivalent of a spherocylinder lens. Inputs are sphere and cylinder power.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.PowerMeridian180(System.Double,System.Double,System.Int32)">
+            <summary>
+            Calculates approximate lens power in the 180 degree meridian.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <param name="thetaDegrees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.PowerMeridian90(System.Double,System.Double,System.Int32)">
+            <summary>
+            Calculates approximate lens power in the 90 degree meridian.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <param name="theta">The difference in the axis and the 90 degree meridian.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.EffectivePower(System.Double,System.Double)">
+            <summary>
+            Calculates effective lens power. Inputs are original lens power in diopters and vertex CHANGE in millimeters.
+            <para>
+            NOTE: The vertex change should be positive if the lens moves closer to the eye and negative if moved further away.
+            </para>
+            </summary>
+            <param name="originalPower">In diopters.</param>
+            <param name="vertexChangeMM">Closer is +. Further is -.In meters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.CompensatedPower(System.Double,System.Double)">
+            <summary>
+            Calculates the compensated lens power to be ordered, rounded to the nearest 1/8th diopter. Inputs are the original power and vertex CHANGE in millimeters.
+            <para>
+            NOTE: The vertex change should be positive if the lens moves closer to the eye and negative if moved further away.
+            </para>
+            </summary>
+            <param name="originalPower">In diopters.</param>
+            <param name="vertexChangeMM">Closer is +. Further is -.In meters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.VertexPowerChangeApprox(System.Double,System.Double)">
+            <summary>
+            Approximates the overall change in lens power per mm. Inputs are original lens power and change in vertex.
+            <para>
+            NOTE: This approximation only gives the CHANGE in power and not the final power to be ordered from the lab.
+            You must determine if the value should be added or subtracted from the original lens power.
+            </para>
+            </summary>
+            <param name="originalPower">In diopters.</param>
+            <param name="vertexChangeMM">In millimeters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.BackVertexPower(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the back vertex power. Inputs are front surface power, back surface power, lens thickness in millimeters and refractive index.
+            </summary>
+            <param name="frontSurfacePower">In diopters.</param>
+            <param name="backSurfacePower">In diopters.</param>
+            <param name="thicknessMM">In meters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Power.FrontVertexPower(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the front vertex power. Inputs are front surface power, back surface power, lens thickness in meters and refractive index
+            </summary>
+            <param name="frontSurfacePower">In diopters.</param>
+            <param name="backSurfacePower">In diopters.</param>
+            <param name="thicknessMM">In meters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Prism">
+            <summary>
+            Prism Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrimsDeviation(System.Double,System.Double)">
+            <summary>
+            Calculates the angle formed by the emerging ray and the original ray path. Inputs are apical angle in degrees and index of refraction.
+            </summary>
+            <param name="apicalAngle">In degrees</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ApicalAngle(System.Double,System.Double)">
+            <summary>
+            Calculates what apical angle the prism will need to deviate a ray of light by a given amount. Inputs are degrees of deviation and index.
+            </summary>
+            <param name="degreesDeviation">In degrees.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrismDiopter(System.Double,System.Double)">
+            <summary>
+            Calculates prism diopters. Inputs are displacement of light ray in centimeters and distance from prism in meters.
+            </summary>
+            <param name="displacement">In centimeters</param>
+            <param name="distance">In Meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrismDisplacement(System.Double,System.Double)">
+            <summary>
+            Calculates displacement of ray in centimeters. Inputs are the prism's dioptric power and the distance in meters.
+            </summary>
+            <param name="prismDiopters">In diopters.</param>
+            <param name="distance">In meters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrismDistance(System.Double,System.Double)">
+            <summary>
+            Calculates the distance a light ray is from a prism in meters. Inputs are the prism power in diopters and the displacement in centimeters.
+            </summary>
+            <param name="prismDiopters">In diopters.</param>
+            <param name="displacement">In centimeters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrismCentrad(System.Double)">
+            <summary>
+            Calculates prism based on the centrad in diopters. Input is the angle of deviation in degrees.
+            </summary>
+            <param name="deviationAngle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrismDiopterApproximation(System.Double,System.Double)">
+            <summary>
+            Approximates the power of a prism in diopters. Inputs are the apical angle in degrees and index of refraction.
+            </summary>
+            <param name="apicalAngle">In degrees.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrenticesLawCentimeters(System.Double,System.Double)">
+            <summary>
+            Calculates prismatic effect in diopters. Inputs are the lens power in diopters and distance from optical center in centimeters.
+            </summary>
+            <param name="lensPower">In diopters.</param>
+            <param name="distance">In centimeters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.PrenticesLawMillimeters(System.Double,System.Double)">
+            <summary>
+            Calculates prismatic effect in diopters. Inputs are the lens power in diopters and distance from optical center in millimeters.
+            </summary>
+            <param name="lensPower">In diopters.</param>
+            <param name="distance">In millimeters</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ResultantPrism(System.Double,System.Double)">
+            <summary>
+            Calculates resultant prism magnitude. Inputs are the horizontal and vertical prism components in diopters.
+            </summary>
+            <param name="horizontalComponent">In diopters.</param>
+            <param name="verticalComponent">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.EffectiveDecentration(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the effective decentration from the optical center of a spherocylinder lens in centimeters.
+            </summary>
+            <param name="horizontalDecentration">In centimeters</param>
+            <param name="verticalDecentration">In centimeters</param>
+            <param name="cylinderAxis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ResultantPrismAngleRightEye(System.Double,System.Double)">
+            <summary>
+            Calculates the angle of prism for the right eye (OD) in degrees. Inputs are the horizontal and vertical prism components in diopters.
+            </summary>
+            <param name="horizontalComponent">In is +. Out is -. In diopters.</param>
+            <param name="verticalComponent">Up is +. Down is -. In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ResultantPrismAngleLeftEye(System.Double,System.Double)">
+            <summary>
+            Calculates the angle of prism for the left eye (OS) in degrees. Inputs are the horizontal and vertical prism components in diopters.
+            </summary>
+            <param name="verticalComponent">In is +. Out is -. In diopters.</param>
+            <param name="horizontalComponent">Up is +. Down is -. In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ResolvingPrismHorizontal(System.Double,System.Double)">
+            <summary>
+            Resolves the horizontal component of a given power and angle. Inputs are prism power in diopters and angle in degrees.
+            </summary>
+            <param name="prismPower">In diopters.</param>
+            <param name="angle">In degrees.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.ResolvingPrismVertical(System.Double,System.Double)">
+            <summary>
+            Resolves the vertical component of a given power and angle. Inputs are prism power in diopters and angle in degrees.
+            </summary>
+            <param name="prismPower">In diopters.</param>
+            <param name="angle">In degrees.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Prism.EyeResolver(System.Double,System.String,System.String)">
+            <summary>
+            Determines which eye is being calculated. Inputs are the prism base angle, as well as the vertical and horizontal base directions
+            </summary>
+            <param name="prismBaseAngle"></param>
+            <param name="verticalBaseDirection">Entered as a String in the format "Base Up" or "Base Down"</param>
+            <param name="horizontalBaseDirection">Entered as a String in the format "Base In" or "Base Out"</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Magnification">
+            <summary>
+            Magnification Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Magnification.SpectacleMagnification(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the magnification of a lens. Inputs are front base curve and actual lens power in diopters, index of refraction, center thickness in meters and vertex distance in meters.
+            </summary>
+            <param name="frontBaseCurve">In diopters.</param>
+            <param name="actualLensPower">In diopters.</param>
+            <param name="index"></param>
+            <param name="thickness">In millimeters.</param>
+            <param name="vertexDistance">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Magnification.MagnificationPercent(System.Double)">
+            <summary>
+            Calculates the magnification percentage. Input is spectacle magnification.
+            </summary>
+            <param name="spectacleMagnification"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.TextFormatter">
+            <summary>
+            Formats double input values into strings
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.TextFormatter.DiopterFormatter(System.Double)">
+            <summary>
+            Converts a double to a string formatted in standard dioptric form. Ex. +#.##, -#.##, +##.##, -##.##
+            </summary>
+            <param name="doubleValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.TextFormatter.CylinderAxisFormatter(System.Int32)">
+            <summary>
+            Converts a double to a string formatted in standard cylinder form. Ex. 001
+            </summary>
+            <param name="cylinderAxis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.TextFormatter.MMFormatter(System.Double)">
+            <summary>
+            Appends the string "mm" to a double input.
+            </summary>
+            <param name="distance"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Thickness">
+            <summary>
+            Thickness Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.SagittalDepth(System.Double,System.Double)">
+            <summary>
+            Calculates the sagittal depth of a lens. Inputs are radius of curvature and lens diameter in millimeters.
+            </summary>
+            <param name="radiusOfCurvature">In millimeters.</param>
+            <param name="lensDiameter">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.SagittalDepth(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the sagittal depth of a lens. Inputs are the true lens power in diopters, diameter in millimeters and index of refraction.
+            </summary>
+            <param name="trueLensPower">In diopters.</param>
+            <param name="lensDiameter">In millimeters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.EdgeThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the edge thickness of a minus lens. Inputs are the front sagittal depth, back sagittal depth and center thickness in millimeters.
+            </summary>
+            <param name="sagBack"></param>
+            <param name="sagFront"></param>
+            <param name="centerThickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.CenterThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the edge thickness of a minus lens. Inputs are the front sagittal depth, back sagittal depth and edge thickness in millimeters.
+            </summary>
+            <param name="sagFront"></param>
+            <param name="sagBack"></param>
+            <param name="edgeThickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.ApproximateSagFormula(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates an approximate sagittal depth. Inputs are surface power in diopters, lens diameter in millimeters and index of refraction.
+            </summary>
+            <param name="surfacePower">In diopters.</param>
+            <param name="lensDiameter">In millimeters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.ApproximateThickness(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates an approximate lens thickness. Inputs are surface power in diopters, lens diameter in millimeters, index of refraction and center OR edge thickness in millimeters.
+            </summary>
+            <param name="surfacePower">In diopters.</param>
+            <param name="lensDiameter">In millimeters.</param>
+            <param name="index"></param>
+            <param name="thickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.PrismThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the thickness of a exclusively prismatic lens. Inputs are the prism power in diopters, lens diameter in millimeters and index of refraction.
+            </summary>
+            <param name="prismPower">In diopters.</param>
+            <param name="lensDiameter">In millimeters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.PrismPowerFromThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the power of a prism based on it's thickness. Inputs are the thickness DIFFERENCE between the two edges, lens Diameter in millimeters and index of refraction.
+            </summary>
+            <param name="thicknessDifference"></param>
+            <param name="lensDiameter"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.PlusPrismLensThickestEdge(System.Double,System.Double)">
+            <summary>
+            Calculates the edge thickness of a plus lens with prism. Inputs are the prism base thickness and minimum edge thickness in millimeters.
+            </summary>
+            <param name="prismBaseThickness">In millimeters.</param>
+            <param name="minimumEdgeThickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.PlusPrismLensCenterThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the center thickness of a plus power lens with prism. Inputs are sagittal depth, minimum edge thickness and prism base thickness.
+            </summary>
+            <param name="sagittalDepth"></param>
+            <param name="minimumEdgeThickness">In millimeters.</param>
+            <param name="prismBaseThickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Thickness.MinusPrismLensEdgeThickness(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the edge thickness of minus lens with prism. Inputs are the sagittal depth, minimum center thickness and prism base thickness in millimeters.
+            </summary>
+            <param name="sagittalDepth"></param>
+            <param name="minimumCenterThickness">In millimeters.</param>
+            <param name="prismBaseThickness">In millimeters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Tilt">
+            <summary>
+            Tilt Formulas
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Tilt.MartinTiltFormulaSphere(System.Double,System.Double,System.Double)">
+            <summary>
+            Approximates the effective power of a tilted lens. Inputs are the original sphere power in diopters, degrees of tilt in degrees and index of refraction.
+            NOTE: Rx must be transposed to the same axis as the axis of tilt.
+            </summary>
+            <param name="originalSpherePower">In diopters.</param>
+            <param name="degreesOfTilt">In degrees.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Tilt.MartinTiltFormulaInducedCylinder(System.Double,System.Double)">
+            <summary>
+            Approximates the induced cylinder of a spherical lens with no cylinder. Inputs are the new sphere power in diopters from Martin's tilt formula and degrees of tilt.
+            NOTE: Rx must be transposed to same axis as the axis of tilt. Also, resulting induced cylinder will be on same axis as tilt.
+            </summary>
+            <param name="newSpherePower">In diopters.</param>
+            <param name="degreesOfTilt">In degrees.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Tilt.MartinTiltFormulaInducedCylinder(System.Double,System.Double,System.Double)">
+            <summary>
+            Calculates the induced cylinder of a tilted lens. Inputs are the new sphere power in diopters from Martin's tilt formula.
+            NOTE: NOTE: Rx must be transposed to same axis as the axis of tilt. Also, resulting induced cylinder will be ADDED to existing cylinder on same axis.
+            </summary>
+            <param name="newSpherePower">In diopters.</param>
+            <param name="degreesOfTilt">In degrees.</param>
+            <param name="originalCylinderPower">In degrees.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Tools">
+            <summary>
+            Tool Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Tools.ToolSelector(System.Double,System.Double)">
+            <summary>
+            Calculates the back side tool curve based on 1.53 index. Inputs are the refractive power NEEDED in diopters and the index of refraction.
+            </summary>
+            <param name="refractivePower">In diopters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Tools.RefractivePower(System.Double,System.Double)">
+            <summary>
+            Calculates the actual refractive power of a surface based on 1.53 index. Inputs are toolPower in diopters and index of refraction.
+            </summary>
+            <param name="toolPower">In diopters.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpticianMathLibrary.Transposition">
+            <summary>
+            Individual Transposition Calculations
+            </summary>
+        </member>
+        <member name="M:OpticianMathLibrary.Transposition.TransposeAxis(System.Double,System.Double)">
+            <summary>
+            Transposes the axis of a prescription with plus cylinder. Inputs are cylinder and cylinder axis.
+            </summary>
+            <param name="cylinder">In diopters.</param>
+            <param name="axis">In degrees.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Transposition.TransposeSpherePower(System.Double,System.Double)">
+            <summary>
+            Calculates the transposed sphere value of lens with plus cylinder. Inputs are sphere and cylinder.
+            </summary>
+            <param name="sphere">In diopters.</param>
+            <param name="cylinder">In diopters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpticianMathLibrary.Transposition.TransposedCylinderSign(System.Double)">
+            <summary>
+            Switches the sign of the cylindrical component for a lens with plus power. Input is cylinder. 
+            </summary>
+            <param name="cylinder">In diopters.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

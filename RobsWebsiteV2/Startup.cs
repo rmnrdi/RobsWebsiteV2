@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace RobsWebsiteV2
 {
@@ -22,11 +24,39 @@ namespace RobsWebsiteV2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info {
+                    Title = "Optics Formulas API",
+                    Version = "v1",
+                    Description = "An API to deliver optical formula calculations.",
+                    Contact = new Contact
+                    {
+                        Name = "Robert Minardi",
+                        Email = "RobMOpti@gmail.com",
+                        Url = "https://RobertMinardi.com"
+                    },
+                    License = new License
+                    {
+                        Name = "MIT License",
+                        Url = "https://opensource.org/licenses/MIT"
+                    }
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Optics Formulas API");
+                });
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
