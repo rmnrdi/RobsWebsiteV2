@@ -1,0 +1,50 @@
+﻿@model RobsWebsiteV2.Models.PrismModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ApicalAngle</title>
+</head>
+<body>
+
+<h4>Apical Angle Calculator</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ApicalAngleCalc" method="post" class="form-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DegreesDeviation" class="control-label"></label>
+                <input type="number" placeholder="0" min = "0" asp-for="DegreesDeviation" class="form-control" />
+                <span asp-validation-for="DegreesDeviation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Index" class="control-label"></label>
+                <input type="number" placeholder="0.00" step="any" min="1.498" asp-for="Index" class="form-control" />
+                <span asp-validation-for="Index" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Result" class="control-label">@Html.DisplayFor(m => Model.Result)</label>
+                @*<input asp-for="Result" type="number" disabled="disabled" class="control-label" />*@
+                <span asp-validation-for="Result" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

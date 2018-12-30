@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="OpticianMathLibrary">
-      <HintPath>..\OpticianMathLibrary.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\OpticianMathLibrary\OpticianMathLibrary\OpticianMathLibrary.csproj" />
   </ItemGroup>
 
 </Project>
