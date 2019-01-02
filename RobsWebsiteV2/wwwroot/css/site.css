@@ -90,6 +90,58 @@
     text-decoration: none;
 }
 
+/*||||||||||||||||||||||||| Article Gallery |||||||||||||||||||||||*/ 
+
+#articlegallery {
+    /* border: 1px solid black; */
+    width: auto;
+    height: auto;
+}
+
+/* image gallery thumbnail properties */
+
+.col-md-12 {
+    margin: 5px;
+}
+
+    .col-md-12 img {
+        margin: 0 auto;
+        width: 200px;
+        height: auto;
+    }
+
+.thumbnail {
+    /*width: 100%;*/
+    border: 0px !important;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #404040;
+    text-decoration: none;
+}
+
+    .thumbnail img {
+        border: 1px solid black;
+        margin: 10px 10px 10px 0px;
+        width: 900px;
+        height: auto;
+        box-shadow: 5px 5px 2px #888888;
+    }
+
+.thumbsubtext {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #404040;
+    text-decoration: none;
+}
+
+/* ||||||||||||||||||||||| Achievements Page |||||||||||||||||||||||||||||| */
+#achievements {
+    min-height: 500px;
+    /*margin-left: auto;*/
+    /*margin-bottom: 50px;*/
+}
+
 
 
 /* Hide/rearrange for smaller screens */

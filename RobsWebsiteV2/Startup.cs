@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
+//New
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace RobsWebsiteV2
 {
@@ -45,6 +48,11 @@ namespace RobsWebsiteV2
                 });
             });
 
+            services.Configure<ForwardedHeadersOptions>(options => 
+            {
+                options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +74,11 @@ namespace RobsWebsiteV2
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             app.UseStaticFiles();
 

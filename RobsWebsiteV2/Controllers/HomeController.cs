@@ -61,11 +61,8 @@ namespace RobsWebsiteV2.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Calculators()
         {
-            _logger.LogInformation("Loading About Page...");
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
