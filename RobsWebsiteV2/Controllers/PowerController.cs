@@ -11,7 +11,7 @@ using RobsWebsiteV2.Models;
 namespace RobsWebsiteV2.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Power")]
+    [Route("api/[Controller]")]
     public class PowerController : Controller
     {
         [HttpGet("Nominal/{PowerFront}/{PowerBack}")]

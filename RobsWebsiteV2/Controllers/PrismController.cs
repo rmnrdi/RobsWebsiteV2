@@ -10,7 +10,7 @@ using RobsWebsiteV2.Models;
 namespace RobsWebsiteV2.Controllers
 {
     [Produces("application/json")]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class PrismController : Controller
     {
         /// <summary>
@@ -18,7 +18,7 @@ namespace RobsWebsiteV2.Controllers
         /// </summary>
         /// <param name="prism"></param>
         /// <returns></returns>
-        [HttpGet("api/ApicalAngle/{DegreesDeviation}/{Index}")]
+        [HttpGet("ApicalAngle/{DegreesDeviation}/{Index}")]
         public ActionResult<PrismModel> ApicalAngle(PrismModel prism)
         {
             if (!ModelState.IsValid)
@@ -33,6 +33,7 @@ namespace RobsWebsiteV2.Controllers
         /// Apical Angle Calculation View Get
         /// </summary>
         /// <returns></returns>
+        [Route("/[Controller]/[Action]")]
         [HttpGet("ApicalAngle")]
         public IActionResult ApicalAngleCalc()
         {
