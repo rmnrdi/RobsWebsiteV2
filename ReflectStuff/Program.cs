@@ -10,15 +10,27 @@ namespace ReflectStuff
     {
         static void Main(string[] args)
         {
+            var mNames = GetMethodNames("BaseCurve");
 
-            foreach (var item in GetDLLTypes2())
+            foreach (var item in mNames)
             {
                 Console.WriteLine($"************ {item.Name} *************");
-                GetMethodInfo(item.GetType());
+                //GetMethod();
             }
             
             Console.ReadLine();
         }
+
+        private static MethodInfo[] GetMethodNames(string className)
+        {
+            Assembly calcAssembly = Assembly.LoadFrom("OpticianMathLibrary.dll");
+            Type calcType = calcAssembly.GetType("OpticianMathLibrary." + className );
+
+            MethodInfo[] methodInfos = calcType.GetMethods(BindingFlags.Public| BindingFlags.Static);
+
+            return methodInfos;
+        }
+
 
         private static Type[] GetDLLTypes2()
         {

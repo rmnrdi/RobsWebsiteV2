@@ -11,22 +11,35 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-        <div class="row">
-            <div class="col-md-6">
-                <select class="form-control" id="StudentGender" name="StudentGender">
-                    <option>Select Calculation Category</option>
-                    @foreach (var item in CalcPage.GetDLLTypes())
-                    {
-                      <option>@item.Name</option>
-                    }
-                </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <select class="form-control" id="CalcType" name="CalculationTypes">
+                        <option>Select Calculation Category</option>
+                        @foreach (var item in CalcPage.GetDLLTypes())
+                        {
+                            <option>@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="Calc" name="Calculations">
+                        <option>Select the Calculation</option>
+                        @foreach (var item in CalcPage.GetMethodNames("Prism"))
+                        {
+                            <option>@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="Calc" name="Calculations">
+                        <option>Select the Calculation</option>
+                        @foreach (var item in CalcPage.GetMethodNames("Prism"))
+                        {
+                            <option>@item.Name</option>
+                        }
+                    </select>
+                </div>
             </div>
-
         </div>
     </div>
-</div>
 
-@functions
-{
-    
-}
