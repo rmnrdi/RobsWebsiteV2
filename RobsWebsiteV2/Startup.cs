@@ -30,7 +30,8 @@ namespace RobsWebsiteV2
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info {
+                c.SwaggerDoc("v1", new Info
+                {
                     Title = "Optics Formulas API",
                     Version = "v1",
                     Description = "An API to deliver optical formula calculations.",
@@ -48,7 +49,7 @@ namespace RobsWebsiteV2
                 });
             });
 
-            services.Configure<ForwardedHeadersOptions>(options => 
+            services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
             });
@@ -82,11 +83,20 @@ namespace RobsWebsiteV2
 
             app.UseStaticFiles();
 
+
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+
             });
         }
     }

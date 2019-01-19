@@ -19,4 +19,9 @@
     <ProjectReference Include="..\..\OpticianMathLibrary\OpticianMathLibrary\OpticianMathLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\api\Data\" />
+    <Folder Include="Areas\api\Models\" />
+  </ItemGroup>
+
 </Project>
