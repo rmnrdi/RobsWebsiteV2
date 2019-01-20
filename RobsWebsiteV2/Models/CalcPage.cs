@@ -9,7 +9,9 @@ namespace RobsWebsiteV2.Models
 {
     public class CalcPage
     {
-        public static List<Type> GetDLLTypes()
+        public CalcTypes CalulationTypes{ get; set; }
+
+        public static List<Type> GetCalcTypes()
         {
             Assembly calcAssembly = Assembly.Load("OpticianMathLibrary");
             Type[] calcType = calcAssembly.GetTypes();
@@ -22,7 +24,7 @@ namespace RobsWebsiteV2.Models
             return typ.ToList();
         }
 
-        public static List<MethodInfo> GetMethodNames(string className)
+        public static List<MethodInfo> GetCalcNames(string className)
         {
             Assembly calcAssembly = Assembly.Load("OpticianMathLibrary");
             Type calcType = calcAssembly.GetType("OpticianMathLibrary." + className);
@@ -30,6 +32,21 @@ namespace RobsWebsiteV2.Models
             MethodInfo[] methodInfos = calcType.GetMethods(BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
 
             return methodInfos.ToList();
+        }
+
+        public enum CalcTypes
+        {
+            BaseCurve,
+            Magnification,
+            OpticianFormulas,
+            PhysicsFormulas,
+            Power,
+            Prism,
+            Thickness,
+            Tilt,
+            Tools,
+            Transposition
+
         }
     }
 }

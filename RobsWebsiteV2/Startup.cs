@@ -11,6 +11,9 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 //New
 using Microsoft.AspNetCore.HttpOverrides;
+using RobsWebsiteV2.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace RobsWebsiteV2
 {
@@ -26,6 +29,10 @@ namespace RobsWebsiteV2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=CalcTypes;Trusted_Connection=True;";
+            services.AddDbContext<CalcTypesDbContext>(options =>
+              options.UseSqlServer(connection));
+
             services.AddMvc();
 
             services.AddSwaggerGen(c =>
@@ -95,8 +102,6 @@ namespace RobsWebsiteV2
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-
             });
         }
     }
