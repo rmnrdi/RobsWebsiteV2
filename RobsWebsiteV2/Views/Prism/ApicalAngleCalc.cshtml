@@ -16,7 +16,7 @@
 <h4>Apical Angle Calculator</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
         <form asp-action="ApicalAngleCalc" method="post" class="form-group">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -32,13 +32,20 @@
             <div class="form-group">
                 <label asp-for="Result" class="control-label">@Html.DisplayFor(m => Model.Result)</label>
                 @*<input asp-for="Result" type="number" disabled="disabled" class="control-label" />*@
-                <span asp-validation-for="Result" class="text-danger"></span>
-                
+                <span asp-validation-for="Result" class="text-danger"></span>        
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
+    </div>
+    <div class="col-md-2">
+        <div class="FormulaBox">
+            When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+            $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+        </div>
+
+        
     </div>
 </div>
 

@@ -15,10 +15,13 @@ namespace RobsWebsiteV2.Models
         public double FrontPower { get; set; }
         public double BackPower { get; set; }
 
+        public double LensPower { get; set; }
+
         public double SpherePower { get; set; }
         public double CylinderPower { get; set; }
         public double CylinderAxis { get; set; }
 
+        public EyeSide eyeside { get; set; }
 
     }
     

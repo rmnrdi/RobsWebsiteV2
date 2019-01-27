@@ -70,7 +70,7 @@ namespace RobsWebsiteV2
 
             app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Optics Formulas API");
+                    c.SwaggerEndpoint("./swagger/v1/swagger.json", "Optics Formulas API");
                 });
 
             if (env.IsDevelopment())
@@ -89,6 +89,7 @@ namespace RobsWebsiteV2
             });
 
             app.UseStaticFiles();
+            app.UseAuthentication();
 
 
 
