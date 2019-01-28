@@ -13,27 +13,27 @@ namespace RobsWebsiteV2.Controllers
     [Route("api/BaseCurve")]
     public class BaseCurveController : Controller
     {
-        [HttpGet("VogelRulePlus/{SpherePower}/{CylinderPower}")]
-        public ActionResult<double> VogelRulePlus(BaseCurveModel baseCurve)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpGet("VogelRulePlus/{SpherePower}/{CylinderPower}")]
+        //public ActionResult<double> VogelRulePlus(BaseCurveModel baseCurve)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            baseCurve.Result = BaseCurve.VogelsRulePlus(baseCurve.SpherePower, baseCurve.CylinderPower);
+        //    baseCurve.Result = BaseCurve.VogelsRulePlus(baseCurve.SpherePower, baseCurve.CylinderPower);
 
-            return baseCurve.Result;
-        }
+        //    return baseCurve.Result;
+        //}
 
-        [HttpGet("VogelRuleMinus/{SpherePower}/{CylinderPower}")]
-        public ActionResult<double> VogelRuleMinus(BaseCurveModel baseCurve)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpGet("VogelRuleMinus/{SpherePower}/{CylinderPower}")]
+        //public ActionResult<double> VogelRuleMinus(BaseCurveModel baseCurve)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            baseCurve.Result = BaseCurve.VogelsRuleMinus(baseCurve.SpherePower, baseCurve.CylinderPower);
+        //    baseCurve.Result = BaseCurve.VogelsRuleMinus(baseCurve.SpherePower, baseCurve.CylinderPower);
 
-            return baseCurve.Result;
-        }
+        //    return baseCurve.Result;
+        //}
 
     }
 

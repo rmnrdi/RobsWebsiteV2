@@ -10,19 +10,19 @@ using RobsWebsiteV2.Models;
 
 namespace RobsWebsiteV2.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/[Controller]")]
-    public class PowerController : Controller
-    {
-        [HttpGet("Nominal/{PowerFront}/{PowerBack}")]
-        public ActionResult<double> NominalPower(PowerModel power)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+    //[Produces("application/json")]
+    //[Route("api/[Controller]")]
+    //public class PowerController : Controller
+    //{
+    //    [HttpGet("Nominal/{PowerFront}/{PowerBack}")]
+    //    public ActionResult<double> NominalPower(PowerModel power)
+    //    {
+    //        if (!ModelState.IsValid)
+    //            return BadRequest(ModelState);
 
-            power.Result = Power.NominalPower(power.PowerFront, power.PowerBack);
+    //        power.Result = Power.NominalPower(power.PowerFront, power.PowerBack);
 
-            return power.Result;            
-        }
-    }
+    //        return power.Result;            
+    //    }
+    //}
 }

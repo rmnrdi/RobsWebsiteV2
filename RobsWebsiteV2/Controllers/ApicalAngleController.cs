@@ -11,13 +11,14 @@ using RobsWebsiteV2.CalcModels;
 namespace RobsWebsiteV2.Controllers
 {
     [Route("[controller]")]
-    public class PrismController : Controller
+    public class ApicalAngleController : Controller
     {
+
         /// <summary>
         /// Apical Angle Calculation View Get
         /// </summary>
         /// <returns></returns>
-        [HttpGet("ApicalAngle")]
+        [HttpGet("ApicalAngleCalc")]
         public IActionResult ApicalAngleCalc()
         {
             return View();
@@ -28,15 +29,15 @@ namespace RobsWebsiteV2.Controllers
         /// </summary>
         /// <param name="prism"></param>
         /// <returns></returns>
-        [HttpPost("ApicalAngle")]
-        public ActionResult<PrismModel> ApicalAngleCalc(PrismModel prism)
+        [HttpPost("ApicalAngleCalc")]
+        public ActionResult<ApicalAngleModel> ApicalAngleCalc(ApicalAngleModel prism)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var dev = prism.DegreesDeviation;
+            var dev = prism.Deviation;
 
-            prism.Result = Prism.ApicalAngle(prism.DegreesDeviation, prism.Index);
+            prism.Result = Prism.ApicalAngle(prism.Deviation, prism.Index);
 
             return View(prism);
         }
