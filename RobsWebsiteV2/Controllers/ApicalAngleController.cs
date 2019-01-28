@@ -14,32 +14,32 @@ namespace RobsWebsiteV2.Controllers
     public class ApicalAngleController : Controller
     {
 
-        /// <summary>
-        /// Apical Angle Calculation View Get
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("ApicalAngleCalc")]
-        public IActionResult ApicalAngleCalc()
-        {
-            return View();
-        }
+        ///// <summary>
+        ///// Apical Angle Calculation View Get
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet("ApicalAngleCalc")]
+        //public IActionResult ApicalAngleCalc()
+        //{
+        //    return View();
+        //}
 
-        /// <summary>
-        /// Apical Angle Calculation View Post
-        /// </summary>
-        /// <param name="prism"></param>
-        /// <returns></returns>
-        [HttpPost("ApicalAngleCalc")]
-        public ActionResult<ApicalAngleModel> ApicalAngleCalc(ApicalAngleModel prism)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        ///// <summary>
+        ///// Apical Angle Calculation View Post
+        ///// </summary>
+        ///// <param name="prism"></param>
+        ///// <returns></returns>
+        //[HttpPost("ApicalAngleCalc")]
+        //public ActionResult<ApicalAngleModel> ApicalAngleCalc(ApicalAngleModel prism)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            var dev = prism.Deviation;
+        //    var dev = prism.Deviation;
 
-            prism.Result = Prism.ApicalAngle(prism.Deviation, prism.Index);
+        //    prism.Result = Prism.ApicalAngle(prism.Deviation, prism.Index);
 
-            return View(prism);
-        }
+        //    return View(prism);
+        //}
     }
 }
