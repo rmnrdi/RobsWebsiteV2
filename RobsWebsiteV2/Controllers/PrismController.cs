@@ -17,6 +17,7 @@ namespace RobsWebsiteV2.Controllers
         [HttpGet("ApicalAngleCalc")]
         public IActionResult ApicalAngleCalc()
         {
+            //Blah
             return View();
         }
 
