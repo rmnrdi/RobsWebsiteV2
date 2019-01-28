@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RobsWebsiteV2.CalcModels
+namespace RobsWebsiteV2.CalcModels.Prism
 {
     public class PrenticesRuleModel
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace RobsWebsiteV2.CalcModels
+namespace RobsWebsiteV2.CalcModels.Prism
 {
     public class ApicalAngleModel
     {

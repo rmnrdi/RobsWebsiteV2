@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpticianMathLibrary;
-using RobsWebsiteV2.CalcModels;
-using RobsWebsiteV2.Models;
+using RobsWebsiteV2.CalcModels.Prism;
 
 namespace RobsWebsiteV2.Areas.API.Controllers
 {
@@ -27,7 +26,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
         /// </summary>
         /// <param name="prism"></param>
         /// <returns></returns>
-        [HttpGet("ApicalAngle/{DegreesDeviation}/{Index}")]
+        [HttpGet("ApicalAngle/{Deviation}/{Index}")]
         public ActionResult<ApicalAngleModel> ApicalAngle(ApicalAngleModel prism)
         {
             prism.Result = Prism.ApicalAngle(prism.Deviation, prism.Index);

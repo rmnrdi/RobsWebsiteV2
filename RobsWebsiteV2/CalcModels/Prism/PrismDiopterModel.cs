@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RobsWebsiteV2.Areas.API.Controllers
+namespace RobsWebsiteV2.CalcModels.Prism
 {
     public class PrismDiopterModel
     {
