@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-
 namespace RobsWebsiteV2.CalcModels.Prism
 {
-    public class PrismDisplacementModel
+    public class ResolvingPrismVerticalModel
     {
         [Required]
-        public double PrismDiopters { get; set; }
+        public double PrismPower { get; set; }
 
         [Required]
-        public double Distance { get; set; }
+        public double Angle { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:0.000}")]
         public double Result { get; set; }

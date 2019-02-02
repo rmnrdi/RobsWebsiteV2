@@ -13,6 +13,11 @@ namespace RobsWebsiteV2.Areas.API.Controllers
     [Produces("application/json")]
     public class PrismController : Controller
     {
+        /// <summary>
+        /// Prism Deviation
+        /// </summary>
+        /// <param name="prism"></param>
+        /// <returns></returns>
         [HttpGet("PrismDeviation/{ApicalAngle}/{Index}")]
         public ActionResult<PrismDeviationModel> PrismDeviation(PrismDeviationModel prism)
         {
@@ -42,44 +47,83 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return prism;
         }
 
-            //public ActionResult<PrismDisplacementModel> PrismDisplacement(PrismDisplacementModel prism)
-            //{
-            //    prism.Result = Prism.PrismDisplacement(prism.PrismDiopters, prism.Distance);
+        public ActionResult<PrismDisplacementModel> PrismDisplacement(PrismDisplacementModel prism)
+        {
+            prism.Result = Prism.PrismDisplacement(prism.PrismDiopters, prism.Distance);
 
-            //    return prism;
-            //}
-
-            //[HttpGet("PrismCentrad/{DeviationAngle}")]
-            //public ActionResult<double> PrismCentrad(PrismModel prism)
-            //{
-            //    if (!ModelState.IsValid)
-            //        return BadRequest(ModelState);
-
-            //    prism.Result = Prism.PrismCentrad(prism.DeviationAngle);
-
-            //    return prism.Result;
-            //}
-
-            //[HttpGet("PrenticesRuleCentimeters/{LensPower}/{Decentration}")]
-            //public ActionResult<PrenticesRuleModel> PrenticesRuleCentimeters(PrenticesRuleModel prism)
-            //{
-            //    if (!ModelState.IsValid)
-            //        return BadRequest(ModelState);
-
-            //    prism.Result = Prism.PrenticesLawCentimeters(prism.LensPower, prism.Decentration);
-
-            //    return prism;
-            //}
-
-            //[HttpGet("PrenticesRuleMillimeters/{LensPower}/{Decentration}")]
-            //public ActionResult<PrenticesRuleModel> PrenticesRuleMillimeters(PrenticesRuleModel prism)
-            //{
-            //    if (!ModelState.IsValid)
-            //        return BadRequest(ModelState);
-
-            //    prism.Result = Prism.PrenticesLawMillimeters(prism.LensPower, prism.Decentration);
-
-            //    return prism;
-            //}
+            return prism;
         }
+
+        [HttpGet("PrismCentrad/{DeviationAngle}")]
+        public ActionResult<PrismCentradModel> PrismCentrad(PrismCentradModel prism)
+        {
+            prism.Result = Prism.PrismCentrad(prism.DeviationAngle);
+
+            return prism;
+        }
+
+        [HttpGet("PrenticesRuleCentimeters/{LensPower}/{Decentration}")]
+        public ActionResult<PrenticesRuleCMModel> PrenticesRuleCentimeters(PrenticesRuleCMModel prism)
+        {
+            prism.Result = Prism.PrenticesLawCentimeters(prism.LensPower, prism.Decentration);
+
+            return prism;
+        }
+
+        [HttpGet("PrenticesRuleMillimeters/{LensPower}/{Decentration}")]
+        public ActionResult<PrenticesRuleModel> PrenticesRuleMillimeters(PrenticesRuleModel prism)
+        {
+            prism.Result = Prism.PrenticesLawMillimeters(prism.LensPower, prism.Decentration);
+
+            return prism;
+        }
+
+        [HttpGet("ResultantPrism/{VerticalComponent}/{HorizontalComponent}")]
+        public ActionResult<ResultantPrismModel> ResultantPrism(ResultantPrismModel prism)
+        {
+            prism.Result = Prism.PrenticesLawMillimeters(prism.VerticalComponent, prism.HorizontalComponent);
+
+            return prism;
+        }
+
+        [HttpGet("EffectiveDecentration/{HorizontalDecentration}/{VerticalDecentration,CylinderAxis}")]
+        public ActionResult<EffectiveDecentrationModel> EffectiveDecentration(EffectiveDecentrationModel prism)
+        {
+            prism.Result = Prism.EffectiveDecentration(prism.HorizontalDecentration, prism.VerticalDecentration,prism.CylinderAxis);
+
+            return prism;
+        }
+
+        [HttpGet("ResultantPrismAngleRightEye/{VerticalComponent}/{HorizontalDecentration}")]
+        public ActionResult<ResultantPrismAngleRightEyeModel> ResultantPrismAngleRightEye(ResultantPrismAngleRightEyeModel prism)
+        {
+            prism.Result = Prism.ResultantPrismAngleRightEye(prism.VerticalComponent, prism.HorizontalComponent);
+
+            return prism;
+        }
+
+        [HttpGet("ResultantPrismAngleLeftEye/{VerticalComponent}/{HorizontalDecentration}")]
+        public ActionResult<ResultantPrismAngleLeftEyeModel> ResultantPrismAngleLeftEye(ResultantPrismAngleLeftEyeModel prism)
+        {
+            prism.Result = Prism.ResultantPrismAngleRightEye(prism.VerticalComponent, prism.HorizontalComponent);
+
+            return prism;
+        }
+
+        [HttpGet("ResolvingPrismHorizontal/{PrismPower}/{Angle}")]
+        public ActionResult<ResolvingPrismHorizontalModel> ResolvingPrismHorizontal(ResolvingPrismHorizontalModel prism)
+        {
+            prism.Result = Prism.ResultantPrismAngleRightEye(prism.PrismPower, prism.Angle);
+
+            return prism;
+        }
+
+        [HttpGet("ResolvingPrismVertical/{PrismPower}/{Angle}")]
+        public ActionResult<ResolvingPrismVerticalModel> ResolvingPrismVertical(ResolvingPrismVerticalModel prism)
+        {
+            prism.Result = Prism.ResultantPrismAngleRightEye(prism.PrismPower, prism.Angle);
+
+            return prism;
+        }
+    }
 }
