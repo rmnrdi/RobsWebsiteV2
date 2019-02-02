@@ -30,6 +30,7 @@
   <ItemGroup>
     <Folder Include="Areas\api\Data\" />
     <Folder Include="Areas\api\Models\" />
+    <Folder Include="CalcModels\BaseCurve\" />
   </ItemGroup>
 
 </Project>
