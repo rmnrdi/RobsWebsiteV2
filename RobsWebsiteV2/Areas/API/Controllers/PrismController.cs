@@ -47,6 +47,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return prism;
         }
 
+        [HttpGet("PrismDisplacement/{PrismDiopter}/{Distance}")]
         public ActionResult<PrismDisplacementModel> PrismDisplacement(PrismDisplacementModel prism)
         {
             prism.Result = Prism.PrismDisplacement(prism.PrismDiopters, prism.Distance);
@@ -81,7 +82,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
         [HttpGet("ResultantPrism/{VerticalComponent}/{HorizontalComponent}")]
         public ActionResult<ResultantPrismModel> ResultantPrism(ResultantPrismModel prism)
         {
-            prism.Result = Prism.PrenticesLawMillimeters(prism.VerticalComponent, prism.HorizontalComponent);
+            prism.Result = Prism.ResultantPrism(prism.VerticalComponent, prism.HorizontalComponent);
 
             return prism;
         }
