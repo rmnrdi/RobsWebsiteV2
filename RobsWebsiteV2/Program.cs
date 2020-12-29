@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using RobsWebsiteV2.Models;
+using Microsoft.AspNetCore.StaticFiles;
 
 
 namespace RobsWebsiteV2

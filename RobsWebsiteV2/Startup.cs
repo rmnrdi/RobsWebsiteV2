@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Net;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Swashbuckle.AspNetCore.Swagger;
 //New
 using Microsoft.AspNetCore.HttpOverrides;
 using RobsWebsiteV2.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.OpenApi.Models;
 
 namespace RobsWebsiteV2
 {
@@ -33,25 +28,25 @@ namespace RobsWebsiteV2
             services.AddDbContext<CalcTypesDbContext>(options =>
               options.UseSqlServer(connection));
 
-            services.AddMvc();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Optics Formulas API",
                     Version = "v1",
                     Description = "An API to deliver optical formula calculations.",
-                    Contact = new Contact
+                    Contact = new OpenApiContact
                     {
                         Name = "Robert Minardi",
-                        Email = "RobMOpti@gmail.com",
-                        Url = "https://RobertMinardi.com"
+                        Email = "contact@robertminardi.com",
+                        Url = new System.Uri( "https://RobertMinardi.com")
                     },
-                    License = new License
+                    License = new OpenApiLicense
                     {
                         Name = "MIT License",
-                        Url = "https://opensource.org/licenses/MIT"
+                        Url = new Uri("https://opensource.org/licenses/MIT")
                     }
                 });
             });
@@ -64,7 +59,7 @@ namespace RobsWebsiteV2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwagger();
 
@@ -73,9 +68,8 @@ namespace RobsWebsiteV2
                     c.SwaggerEndpoint("./swagger/v1/swagger.json", "Optics Formulas API");
                 });
 
-            if (env.IsDevelopment())
+            if (env.EnvironmentName == "Development")
             {
-                app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
             else
