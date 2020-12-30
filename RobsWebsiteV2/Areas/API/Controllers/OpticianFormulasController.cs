@@ -38,5 +38,24 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return decentration;
         }
 
+        [HttpGet("MinimumBlankSize/{EffectiveDiameter}/{MonocularDecentration}/{ChipFactor}")]
+        public ActionResult<MinimumBlankSizeModel> MinimumBlankSize(MinimumBlankSizeModel blank)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            blank.Result = OpticianFormulas.MinimumBlankSize(blank.EffectiveDiameter, blank.MonocularDecentration, blank.ChipFactor);
+            return blank;
+        }
+        
+        [HttpGet("SegDrop/{SegHeight}/{BMeasurement}")]
+        public ActionResult<SegDropModel> SegDrop(SegDropModel drop)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            drop.Result = OpticianFormulas.SegDrop(drop.SegHeight, drop.BMeasurement);
+            return drop;
+        }
+
     }
 }

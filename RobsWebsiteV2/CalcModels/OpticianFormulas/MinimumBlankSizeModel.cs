@@ -10,7 +10,7 @@ namespace RobsWebsiteV2.CalcModels.OpticianFormulas
 
         [Required]
         [Range(0, 20)]
-        public double MonoDecentration { get; set; }
+        public double MonocularDecentration { get; set; }
 
         [Required]
         public bool ChipFactor { get; set; }

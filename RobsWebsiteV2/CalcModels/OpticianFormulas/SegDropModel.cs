@@ -10,7 +10,7 @@ namespace RobsWebsiteV2.CalcModels.OpticianFormulas
 
         [Required]
         [Range(10, 70)]
-        public double Bmeasurement { get; set; }
+        public double BMeasurement { get; set; }
 
 
         [DisplayFormat(DataFormatString = "{0:0.000}")]
