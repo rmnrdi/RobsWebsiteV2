@@ -2,10 +2,10 @@
 
 namespace RobsWebsiteV2.CalcModels.OpticianFormulas
 {
-    public class BinocularDecentrationModel
+    public class MonocularDecentrationModel
     {
         [Required]
-        [Range(10, 80)]
+        [Range(10, 70)]
         public double AMeasurement { get; set; }
 
         [Required]
@@ -14,7 +14,7 @@ namespace RobsWebsiteV2.CalcModels.OpticianFormulas
 
         [Required]
         [Range(10, 40)]
-        public double BinocularPD{ get; set; }
+        public double MonocularPD{ get; set; }
 
         [DisplayFormat(DataFormatString = "{0:0.000}")]
         public double Result { get; set; }

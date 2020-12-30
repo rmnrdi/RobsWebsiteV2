@@ -12,5 +12,7 @@ namespace RobsWebsiteV2.CalcModels.OpticianFormulas
         [Range(-30, 0)]
         public double CylinderPower { get; set; }
 
+        public string Result { get; set; }
+
     }
 }

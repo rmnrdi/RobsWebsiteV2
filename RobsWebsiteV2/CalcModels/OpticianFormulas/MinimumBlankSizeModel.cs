@@ -2,19 +2,18 @@
 
 namespace RobsWebsiteV2.CalcModels.OpticianFormulas
 {
-    public class BinocularDecentrationModel
+    public class MinimumBlankSizeModel
     {
         [Required]
-        [Range(10, 80)]
-        public double AMeasurement { get; set; }
+        [Range(10, 70)]
+        public double EffectiveDiameter { get; set; }
 
         [Required]
-        [Range(7, 18)]
-        public double DBLMeasurement { get; set; }
+        [Range(0, 20)]
+        public double MonoDecentration { get; set; }
 
         [Required]
-        [Range(10, 40)]
-        public double BinocularPD{ get; set; }
+        public bool ChipFactor { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:0.000}")]
         public double Result { get; set; }

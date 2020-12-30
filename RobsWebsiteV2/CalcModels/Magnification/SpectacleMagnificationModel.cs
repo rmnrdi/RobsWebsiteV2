@@ -23,5 +23,8 @@ namespace RobsWebsiteV2.CalcModels.Magnification
         [Required]
         [Range(0,16)]
         public double VertexDistance { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:0.000}")]
+        public double Result { get; set; }
     }
 }
