@@ -68,7 +68,16 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             power.Result = Power.NominalPower(power.DioptricPowerFront, power.DioptricPowerBack);
             return power;
         }
+        [HttpGet("NominalBacksidePower/{DioptricPowerFront}/{TotalLensPower}")]
+        public ActionResult<NominalBackSidePowerModel> NominalBacksidePower(NominalBackSidePowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            power.Result = Power.NominalBacksidePower(power.DioptricPowerFront, power.TotalLensPower);
+            return power;
+
+        }
 
 
 
