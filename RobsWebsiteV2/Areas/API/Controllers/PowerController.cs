@@ -18,5 +18,16 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return vergence;
         }
 
+        [HttpGet("DioptricPower/{Distance}")]
+        public ActionResult<DioptricPowerModel> DioptricPower(DioptricPowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+
+            power.Result = Power.DioptricPower(power.Distance);
+            return power;
+        }
+
     }
 }
