@@ -119,6 +119,16 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("EffectivePower/{OriginalPower}/{VertexChange}")]
+        public ActionResult<EffectivePowerModel> EffectivePower(EffectivePowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.EffectivePower(power.OriginalPower, power.VertexChange);
+            return power;
+        }
+
 
 
 
