@@ -139,6 +139,28 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("VertexPowerChangeApprox/{OriginalPower/{VertexChange}}")]
+        public ActionResult<VertexPowerChangeApproxModel> VertexPowerChangeApprox(VertexPowerChangeApproxModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.VertexPowerChangeApprox(power.OriginalPower, power.VertexChange);
+            return power;
+        }
+
+        [HttpGet("BackVertexPower/{FrontSurfacePower/{BackSurfacePower}/{Thickness}/{Index}")]
+        public ActionResult<BackVertexPowerModel> BackVertexPower(BackVertexPowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.BackVertexPower(power.FrontSurfacePower, 
+                                                 power.BackSurfacePower, 
+                                                 power.Thickness, power.Index);
+            return power;
+        }
+
 
 
 
