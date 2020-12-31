@@ -79,6 +79,15 @@ namespace RobsWebsiteV2.Areas.API.Controllers
 
         }
 
+        [HttpGet("LensMakersEquation/{Index}/{RadiusOfCurvatureFront}/{RadiusOfCurvatureBack}")]
+        public ActionResult<LensMakerEquationModel> LensMakerEquation(LensMakerEquationModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            power.Result = Power.LensMakersEquation(power.Index, power.RadiusOfCurvatureFront, power.RadiusOfCurvatureBack)
+            return power;
+        }
+
 
 
 
