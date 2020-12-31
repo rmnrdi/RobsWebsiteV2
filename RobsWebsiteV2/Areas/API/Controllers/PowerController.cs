@@ -161,6 +161,21 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("FrontVertexPower/{FrontSurfacePower}/{BackSurfacePower}/{Thickness}/{Index}")]
+        public ActionResult<FrontVertexPowerModel> FrontVertexPower(FrontVertexPowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.FrontVertexPower(power.FrontSurfacePower,
+                                     power.BackSurfacePower,
+                                     power.Thickness, power.Index);
+            return power;
+        }
+
+
+
+
 
 
 
