@@ -58,6 +58,16 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return prism;
         }
 
+        [HttpGet("PrismDistance/{PrismDiopters}/{Displacement}")]
+        public ActionResult<PrismDistanceModel> PrismDistance(PrismDistanceModel distance)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            distance.Result = Prism.PrismDistance(distance.PrismDiopters, distance.Displacement);
+            return distance;
+        }
+
         [HttpGet("PrismCentrad/{DeviationAngle}")]
         public ActionResult<PrismCentradModel> PrismCentrad(PrismCentradModel prism)
         {
@@ -65,6 +75,16 @@ namespace RobsWebsiteV2.Areas.API.Controllers
                 return BadRequest(ModelState);
 
             prism.Result = Prism.PrismCentrad(prism.DeviationAngle);
+            return prism;
+        }
+
+        [HttpGet("PrismDiopterApprox/{ApicalAngle}/{Index}")]
+        public ActionResult<PrismDiopterApproxModel> PrismDiopterApprox(PrismDiopterApproxModel prism)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            prism.Result = Prism.PrismDiopterApproximation(prism.ApicalAngle, prism.Index);
             return prism;
         }
 
@@ -104,7 +124,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            prism.Result = Prism.EffectiveDecentration(prism.HorizontalDecentration, prism.VerticalDecentration,prism.CylinderAxis);
+            prism.Result = Prism.EffectiveDecentration(prism.HorizontalDecentration, prism.VerticalDecentration, prism.CylinderAxis);
             return prism;
         }
 
@@ -146,6 +166,17 @@ namespace RobsWebsiteV2.Areas.API.Controllers
 
             prism.Result = Prism.ResultantPrismAngleRightEye(prism.PrismPower, prism.Angle);
             return prism;
+        }
+
+        [HttpGet("EyeResolver/{PrismBaseAngle}/{VerticalBaseDirection}/{HorizontalBaseDirection}")]
+        public ActionResult<EyeResolverModel> EyeResolver(EyeResolverModel eye)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            eye.Result = Prism.EyeResolver(eye.PrismBaseAngle, eye.VerticalBaseDirection, eye.HorizontalBaseDirection);
+            return eye;
+
         }
     }
 }
