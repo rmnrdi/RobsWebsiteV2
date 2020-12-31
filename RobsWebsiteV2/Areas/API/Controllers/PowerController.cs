@@ -84,9 +84,22 @@ namespace RobsWebsiteV2.Areas.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            power.Result = Power.LensMakersEquation(power.Index, power.RadiusOfCurvatureFront, power.RadiusOfCurvatureBack)
+
+            power.Result = Power.LensMakersEquation(power.Index, power.RadiusOfCurvatureFront, power.RadiusOfCurvatureBack);
             return power;
         }
+
+        [HttpGet("SpericalEquivelant/{SpherePower}/{CylinderPower}")]
+        public ActionResult<SphericalEquivelantModel> SphericalEquivelant(SphericalEquivelantModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.SpericalEquivalant(power.SpherePower, power.CylinderPower);
+            return power;
+        }
+
+
 
 
 
