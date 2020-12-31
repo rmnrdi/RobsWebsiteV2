@@ -129,6 +129,17 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("CompensatedPower/{OriginalPower}/{VertexChange}")]
+        public ActionResult<CompensatedPowerModel> CompensatedPower(CompensatedPowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.CompensatedPower(power.OriginalPower, power.VertexChange);
+            return power;
+        }
+
+
 
 
 
