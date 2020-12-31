@@ -139,7 +139,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
-        [HttpGet("VertexPowerChangeApprox/{OriginalPower/{VertexChange}}")]
+        [HttpGet("VertexPowerChangeApprox/{OriginalPower}/{VertexChange}")]
         public ActionResult<VertexPowerChangeApproxModel> VertexPowerChangeApprox(VertexPowerChangeApproxModel power)
         {
             if (!ModelState.IsValid)
@@ -149,7 +149,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
-        [HttpGet("BackVertexPower/{FrontSurfacePower/{BackSurfacePower}/{Thickness}/{Index}")]
+        [HttpGet("BackVertexPower/{FrontSurfacePower}/{BackSurfacePower}/{Thickness}/{Index}")]
         public ActionResult<BackVertexPowerModel> BackVertexPower(BackVertexPowerModel power)
         {
             if (!ModelState.IsValid)
