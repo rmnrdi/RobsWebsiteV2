@@ -10,7 +10,7 @@ namespace RobsWebsiteV2.CalcModels.Power
 
         [Required]
         [Range(-30, 30)]
-        public double DioptricPower { get; set; }
+        public double RadiusOfCurvature { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:0.000}")]
         public double Result { get; set; }

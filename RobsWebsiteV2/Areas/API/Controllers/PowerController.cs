@@ -39,5 +39,17 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return distance;
         }
 
+        [HttpGet("SurfacePower/{Index}/{RadiusOfCurvature}")]
+        public ActionResult<SurfacePowerModel> SurfacePower(SurfacePowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.SurfacePower(power.Index, power.RadiusOfCurvature);
+            return power;
+
+        }
+
+
     }
 }
