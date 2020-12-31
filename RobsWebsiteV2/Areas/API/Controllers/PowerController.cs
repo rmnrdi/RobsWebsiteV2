@@ -47,8 +47,30 @@ namespace RobsWebsiteV2.Areas.API.Controllers
 
             power.Result = Power.SurfacePower(power.Index, power.RadiusOfCurvature);
             return power;
-
         }
+
+        [HttpGet("RadiusOfCurvature/{Index}/{DioptricPower}")]
+        public ActionResult<RadiusOfCurvatureModel> RadiusOfCurvature(RadiusOfCurvatureModel radius)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            radius.Result = Power.RadiusOfCurvature(radius.Index, radius.DioptricPower);
+            return radius;
+        }
+
+        [HttpGet("NominalPower/{DioptricPowerFront}/{DioptricPowerBack}")]
+        public ActionResult<NominalPowerModel> NominalPower(NominalPowerModel power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.NominalPower(power.DioptricPowerFront, power.DioptricPowerBack);
+            return power;
+        }
+
+
+
 
 
     }
