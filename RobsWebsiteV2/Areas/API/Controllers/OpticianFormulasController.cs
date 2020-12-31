@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RobsWebsiteV2.CalcModels.OpticianFormulas;
 using OpticianMathLibrary;
+using RobsWebsiteV2.CalcModels.OpticianFormulas;
 
 namespace RobsWebsiteV2.Areas.API.Controllers
 {

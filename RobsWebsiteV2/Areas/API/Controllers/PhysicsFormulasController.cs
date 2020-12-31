@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RobsWebsiteV2.CalcModels.PhysicsFormulas;
 using OpticianMathLibrary;
+using RobsWebsiteV2.CalcModels.PhysicsFormulas;
 
 namespace RobsWebsiteV2.Areas.API.Controllers
 {

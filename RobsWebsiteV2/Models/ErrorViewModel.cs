@@ -1,5 +1,3 @@
-using System;
-
 namespace RobsWebsiteV2.Models
 {
     public class ErrorViewModel

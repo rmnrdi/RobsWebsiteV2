@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using RobsWebsiteV2.CalcModels.Magnification;
-using OpticianMathLibrary;
-
-namespace RobsWebsiteV2.Areas.api.Controllers
+﻿namespace RobsWebsiteV2.Areas.api.Controllers
 {
     //[Route("api/v1/[controller]")]
     //[Produces("application/json")]

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RobsWebsiteV2.Models;
+using System.Diagnostics;
 
 namespace RobsWebsiteV2.Controllers
 {
@@ -69,8 +65,6 @@ namespace RobsWebsiteV2.Controllers
         public IActionResult Contact()
         {
             _logger.LogInformation("Loading Contact Page...");
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

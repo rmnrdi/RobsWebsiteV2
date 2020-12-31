@@ -1,14 +1,14 @@
-﻿using System;
-using System.Net;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 //New
 using Microsoft.AspNetCore.HttpOverrides;
-using RobsWebsiteV2.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using RobsWebsiteV2.Data;
+using System;
+using System.Net;
 
 namespace RobsWebsiteV2
 {
@@ -71,6 +71,7 @@ namespace RobsWebsiteV2
             if (env.EnvironmentName == "Development")
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
