@@ -29,5 +29,15 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("FocalDistance/{Diopter}")]
+        public ActionResult<FocalDistanceModel> FocalDistance(FocalDistanceModel distance)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            distance.Result = Power.FocalDistance(distance.DioptricPower);
+            return distance;
+        }
+
     }
 }
