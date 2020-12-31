@@ -99,6 +99,26 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return power;
         }
 
+        [HttpGet("PowerMeridian180/{SpherePower}/{CylinderPower}/{DegreesTheta}")]
+        public ActionResult<PowerMeridian180Model> PowerMeridian180(PowerMeridian180Model power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.PowerMeridian180(power.SpherePower, power.CylinderPower, power.DegreesTheta);
+            return power;
+        }
+
+        [HttpGet("PowerMeridian90/{SpherePower}/{CylinderPower}/{DegreesTheta}")]
+        public ActionResult<PowerMeridian90Model> PowerMeridian90(PowerMeridian90Model power)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            power.Result = Power.PowerMeridian90(power.SpherePower, power.CylinderPower, power.DegreesTheta);
+            return power;
+        }
+
 
 
 
