@@ -2,7 +2,7 @@
 
 namespace RobsWebsiteV2.CalcModels.Thickness
 {
-    public class ApproximateSagFormulaModel
+    public class ApproximateSagModel
     {
         [Required]
         [Range(-30, 30)]

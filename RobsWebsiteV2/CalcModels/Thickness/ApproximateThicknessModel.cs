@@ -18,7 +18,7 @@ namespace RobsWebsiteV2.CalcModels.Thickness
         public double Index { get; set; }
 
         [Required]
-        public double Thickness { get; set; }
+        public double LensThickness { get; set; }
 
         public double Result { get; set; }
     }
