@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RobsWebsiteV2.CalcModels.Thickness;
 using OpticianMathLibrary;
+using RobsWebsiteV2.CalcModels;
 
 namespace RobsWebsiteV2.Areas.API.Controllers
 {
@@ -99,13 +100,26 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return thickness;
         }
 
+        [HttpGet("SagittalDepthApprox/{TrueLensPower}/{LensDiameter}")]
+        public ActionResult<SagittalDepthApproxModel> SagittalDepthApprox(SagittalDepthApproxModel sag)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            sag.Result = Thickness.SagittalDepthApprox(sag.RadiusOfCurvature, sag.LensDiameter);
+            return sag;
+        }
 
 
+        [HttpGet("SagittalDepth/{TrueLensPower}/{LensDiameter}")]
+        public ActionResult<SagittalDepthModel> SagittalDepth(SagittalDepthModel sag)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            sag.Result = Thickness.SagittalDepth(sag.TrueLensPower, sag.LensDiameter, sag.Index);
+            return sag;
 
-
-
-
-
+        }
     }
 }
