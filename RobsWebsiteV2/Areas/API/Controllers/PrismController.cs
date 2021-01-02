@@ -118,7 +118,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return prism;
         }
 
-        [HttpGet("EffectiveDecentration/{HorizontalDecentration}/{VerticalDecentration,CylinderAxis}")]
+        [HttpGet("EffectiveDecentration/{HorizontalDecentration}/{VerticalDecentration}/{CylinderAxis}")]
         public ActionResult<EffectiveDecentrationModel> EffectiveDecentration(EffectiveDecentrationModel prism)
         {
             if (!ModelState.IsValid)
