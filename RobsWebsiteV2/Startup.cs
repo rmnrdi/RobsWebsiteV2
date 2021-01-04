@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using RobsWebsiteV2.Data;
 using System;
 using System.Net;
 
@@ -24,10 +23,6 @@ namespace RobsWebsiteV2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=CalcTypes;Trusted_Connection=True;";
-            services.AddDbContext<CalcTypesDbContext>(options =>
-              options.UseSqlServer(connection));
-
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
             services.AddSwaggerGen(c =>
@@ -84,7 +79,6 @@ namespace RobsWebsiteV2
             });
 
             app.UseStaticFiles();
-            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

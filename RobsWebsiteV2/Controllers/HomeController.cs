@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RobsWebsiteV2.Models;
-using System.Diagnostics;
 
 namespace RobsWebsiteV2.Controllers
 {
@@ -71,7 +69,7 @@ namespace RobsWebsiteV2.Controllers
         public IActionResult Error()
         {
             _logger.LogInformation("Loading Error Page...");
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
