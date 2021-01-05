@@ -128,7 +128,7 @@ namespace RobsWebsiteV2.Areas.API.Controllers
             return prism;
         }
 
-        [HttpGet("ResultantPrismAngleRightEye/{VerticalComponent}/{HorizontalDecentration}")]
+        [HttpGet("ResultantPrismAngleRightEye/{VerticalComponent}/{HorizontalComponent}")]
         public ActionResult<ResultantPrismAngleRightEyeModel> ResultantPrismAngleRightEye(ResultantPrismAngleRightEyeModel prism)
         {
             if (!ModelState.IsValid)

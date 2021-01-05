@@ -10,6 +10,7 @@ namespace RobsWebsiteV2.CalcModels.Prism
         [Required]
         public double HorizontalComponent { get; set; }
 
+
         [DisplayFormat(DataFormatString = "{0:0.000}")]
         public double Result { get; set; }
     }

@@ -6,6 +6,7 @@ namespace RobsWebsiteV2.CalcModels.OpticianFormulas
     {
         [Required]
         [Range(10, 70)]
+
         public double EffectiveDiameter { get; set; }
 
         [Required]

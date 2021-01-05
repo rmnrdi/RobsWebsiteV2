@@ -5,6 +5,7 @@ namespace RobsWebsiteV2.CalcModels.Prism
     public class EyeResolverModel
     {
         [Required]
+        [Range(0,360)]
         public double  PrismBaseAngle { get; set; }
 
         [Required]
