@@ -1,0 +1,42 @@
+﻿@model RobsWebsiteV2.CalcModels.BaseCurve.VogelsRulePlusModel
+
+@{
+    ViewData["Title"] = "VogelsRulePlus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VogelsRulePlus</h2>
+
+<h4>VogelsRulePlusModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="VogelsRulePlus">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SpherePower" class="control-label"></label>
+                <input asp-for="SpherePower" class="form-control" />
+                <span asp-validation-for="SpherePower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CylinderPower" class="control-label"></label>
+                <input asp-for="CylinderPower" class="form-control" />
+                <span asp-validation-for="CylinderPower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Result" class="control-label">@Html.DisplayFor(m => Model.Result)</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calculate" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

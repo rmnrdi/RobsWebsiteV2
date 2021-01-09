@@ -55,11 +55,6 @@ namespace RobsWebsiteV2.Controllers
             return View();
         }
 
-        public IActionResult Calculators()
-        {
-            return View();
-        }
-
         public IActionResult Contact()
         {
             _logger.LogInformation("Loading Contact Page...");
@@ -69,6 +64,12 @@ namespace RobsWebsiteV2.Controllers
         public IActionResult Error()
         {
             _logger.LogInformation("Loading Error Page...");
+            return View();
+        }
+
+        public IActionResult CalculatorsHome()
+        {
+            _logger.LogInformation("Loading Calculator Page...");
             return View();
         }
     }
