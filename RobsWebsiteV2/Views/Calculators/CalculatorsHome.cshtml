@@ -3,23 +3,19 @@
     ViewData["Title"] = "Calculators";
 }
 
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold">Base Curve</h5>
-        <a asp-controller="BaseCurve" asp-action="VogelsRulePlus">VogelsRulePlus</a>
-        <a asp-controller="BaseCurve" asp-action="VogelsRuleMinus">VogelsRuleMinus</a>
-        <a asp-controller="BaseCurve" asp-action="BoddyFormula">BoddyFormula</a>
-    </div>
-</div>
-
 <div class="card border-dark mb-3" style="max-width: 18rem;">
     <div class="card-header text-dark">Base Curve</div>
     <div class="card-body text-dark">
-        <h5 class="card-title">Dark card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <ul class="list-unstyled">
+            <li>
+                <a asp-controller="BaseCurve" asp-action="VogelsRulePlus">VogelsRulePlus</a>
+            </li>
+            <li>
+                <a asp-controller="BaseCurve" asp-action="VogelsRuleMinus">VogelsRuleMinus</a>
+            </li>
+            <li>
+                <a asp-controller="BaseCurve" asp-action="BoddyFormula">BoddyFormula</a>
+            </li>
+        </ul>
     </div>
-</div>
-
-<div class="card">
-    <div class="card-body">Basic card</div>
 </div>
