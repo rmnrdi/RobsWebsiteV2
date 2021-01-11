@@ -14,8 +14,8 @@ namespace RobsWebsiteV2.CalcModels.BaseCurve
         [Range(-30,0)]
         public double CylinderPower { get; set; }
 
-        [ReadOnly(true)]
-        [DisplayFormat(DataFormatString = "{0:0.000}")]
+
+        [DisplayFormat(DataFormatString = "{0:0.00}")]
         public double Result { get; set; }
     }
 }

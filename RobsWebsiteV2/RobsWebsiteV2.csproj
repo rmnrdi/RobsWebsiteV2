@@ -4,6 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <UserSecretsId>55615098-eee6-4262-be4c-3b87db5e4d3a</UserSecretsId>
+    <Authors>Robert Minardi</Authors>
+    <Company />
+    <Product>Rob's website and optician calculation API</Product>
   </PropertyGroup>
 
   <ItemGroup>
